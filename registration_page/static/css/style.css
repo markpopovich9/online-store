@@ -29,3 +29,159 @@ a{
     z-index: 0;
 
 }
+form{
+/* Registration */
+
+margin-left: auto;
+margin-top: 10%;
+margin-right: auto;
+/* margin-bottom: auto; */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 17px;
+
+width: 450px;
+height: 540px;
+
+border: 3px solid #000000;
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
+
+
+}
+p{
+/* Email */
+
+/* position: absolute;
+width: 370px;
+height: 27px;
+left: 40px;
+top: 132px; */
+/* Login */
+
+/* position:relative; */
+left: 40px;
+top: 22px;
+margin-top: auto;
+margin-bottom: auto;
+
+/* Login */
+
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+
+
+
+
+/* color: #000000;
+
+/* Password */
+
+/* width: 370px;
+height: 93px; */
+
+
+/* Inside auto layout */
+/* flex: none;
+order: 2;
+flex-grow: 0; */ 
+
+}
+input{
+    /* Input Login */
+
+box-sizing: border-box;
+
+/* position: absolute; */
+width: 370px; 
+height: 56px; 
+/* left: 40px;
+top: 59px; */
+
+border: 2px solid #000000;
+border-radius: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+}
+#send{
+/* Button SEND */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 204px;
+height: 56px;
+
+border: 2px solid #000000;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+background-color: white;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+/* #login{
+width: 370px;
+height: 56px;
+left: 40px;
+top: 59px;
+}
+#password{
+width: 370px;
+height: 56px;
+left: 40px;
+top: 279px;
+
+
+}
+#password_confirmation{
+width: 370px;
+height: 56px;
+left: 40px;
+top: 389px;
+} */

@@ -5,11 +5,19 @@
 {% endblock %}
 
 {% block content %}
-    <a href="/reg/">Registration</a>
-    <p>Login</p>
-    <p>Password</p>
-    <button>Send</button>
+    <a href="/login/">authorization</a>
+    
+    <form method="post">
+        <p class="login">Login</p>
+        <input type="text" id="login" name="login" required>
+        <p class="password">Password</p>
+        <input type="text" id="password" name="password" required>
+        
+        <button id="send">Send</button>
+    </form>
+    
 {% endblock %}
+
 
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('login.static', filename = '/css/style.css') }}">

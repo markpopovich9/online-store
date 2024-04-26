@@ -5,12 +5,21 @@
 {% endblock %}
 
 {% block content %}
-    <a href="/login/">authorization</a>
-    <p>Login</p>
-    <p>Email</p>
-    <p>Password</p>
-    <p>Password confirmation</p>
-    <button>Send</button>
+    <a href="/reg/">Registration</a>
+    <form method="post">
+        <p class="login">Login</p>
+        <input type="text" id="login" name="login" required>
+        <p class="email">Email</p>
+        <input type="text" id = "email" name="email" required>
+        <p class="password">Password</p>
+        <input type="text" id="password" name="password" required>
+        <p class="Password_confirmation">Password confirmation</p>
+        <input type="text" id="password_confirmation" required >
+
+        <button id="send">Send</button>
+    </form>
+    
+    
 {% endblock %}
 
 {% block head %}
