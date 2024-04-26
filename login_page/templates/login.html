@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    authorization page
+{% endblock %}
+
+{% block content %}
+    <a href="/reg/">Registration</a>
+    <p>Login</p>
+    <p>Password</p>
+    <button>Send</button>
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('login.static', filename = '/css/style.css') }}">
+{% endblock %}

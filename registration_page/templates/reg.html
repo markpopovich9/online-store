@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Reg page
+{% endblock %}
+
+{% block content %}
+    <a href="/login/">authorization</a>
+    <p>Login</p>
+    <p>Email</p>
+    <p>Password</p>
+    <p>Password confirmation</p>
+    <button>Send</button>
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('reg.static', filename = '/css/style.css') }}">
+{% endblock %}
