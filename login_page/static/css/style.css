@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'Inter';
+    src: url(inter/web/inter.css);
+}
 a{
     /* Registration */
 
