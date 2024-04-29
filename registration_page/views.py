@@ -15,12 +15,14 @@ def render_reg_page():
         print(flask.request.form)
     
         if flask.request.form['password'] == flask.request.form['Password_confirmation']:
+            
+
             user = User(
                 login = flask.request.form['login'],
                 email = flask.request.form['email'],
                 password = flask.request.form['password']
-
             )
+
             try:
                 DATABASE.session.add(user)
                 DATABASE.session.commit()
