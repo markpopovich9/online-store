@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "Inter";
+    src: url(fonts/Inter-Regular.woff2);
+}
+.first{
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    
+   
+    /* HOME */
+    /* HOME */
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    
+    color: #000000;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+/* width: 177px;
+height: 44px; */
+/* 
+<a class="first" href="/">HOME</a>
+    <a id="shop" href="/shop/">SHOP</a>
+    <a id="basket" href="/shop/">BASKET</a>
+    <a id="contacts" href="/shop/">CONTACTS</a>
+    <p id="end">{{ name }}</p> */
+}
+#shop{
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 10%;
+    
+    /* SHOP */
+
+
+
+
+}
+#basket{
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 19%;
+    text-decoration-line:none ;
+    flex-grow: 0;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+text-decoration-line: underline;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+}
+#contacts{
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 30%;
+    text-decoration-line:none ;
+}
+
+#end{
+     /* mykola Skrypnyk */
+     position: absolute;
+     /* width: 1400px; */
+     /* height: 33px; */
+     left: 90%;
+     top: 9px;
+
+     color: #000000;
+ 
+ 
+ font-family: 'Inter';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 24px;
+ line-height: 29px;
+ display: flex;
+ text-transform: uppercase;
+ 
+ 
+ 
+ }
+a{
+/* HOME */
+
+width: 177px;
+height: 44px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+}
+#log{
+    /* Frame 2 */
+
+/* Auto layout */
+margin-top: 15%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 17px 39px;
+gap: 10px;
+
+width: 1440px;
+height: 80px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}

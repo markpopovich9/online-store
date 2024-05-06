@@ -7,3 +7,11 @@ class User(DATABASE.Model, flask_login.UserMixin):
     password =  DATABASE.Column(DATABASE.String(255))
     def __repr__(self) -> str:
         return f"login - {self.login}"
+class Product(DATABASE.Model, flask_login.UserMixin):
+    id = DATABASE.Column(DATABASE.Integer, primary_key = True)
+    name = DATABASE.Column(DATABASE.String(60))
+    description = DATABASE.Column(DATABASE.Text)
+    count = DATABASE.Column(DATABASE.Integer)
+    price = DATABASE.Column(DATABASE.Integer)
+    def __repr__(self) -> str:
+        return f"name - {self.name}"

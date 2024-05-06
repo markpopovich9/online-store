@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}
+shop page
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('shop.static', filename = '/css/style.css') }}">
+{% endblock %}
+{% block content %}
+
+
+<div id="log">
+
+    <a class="first" href="/">HOME</a>
+    <a id="shop" href="/shop/">SHOP</a>
+    <a id="basket" href="/basket/">BASKET</a>
+    <a id="contacts" href="/contacts/">CONTACTS</a>
+    <p id="end">{{ name }}</p>
+</div>
+{% endblock %}
