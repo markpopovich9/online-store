@@ -14,4 +14,4 @@ class Product(DATABASE.Model, flask_login.UserMixin):
     count = DATABASE.Column(DATABASE.Integer)
     price = DATABASE.Column(DATABASE.Integer)
     def __repr__(self) -> str:
-        return f"name - {self.name}"
+        return f"id - {self.id}"

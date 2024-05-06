@@ -115,3 +115,237 @@ flex-grow: 0;
 
 
 }
+.end{
+    position: absolute;
+    right: 10%;
+    margin-top: 10px;
+    text-align: right;
+    /* confirm_9794745 1 */
+
+width: 38.12px;
+height: 36px;
+
+/* background: url(confirm_9794745.png); */
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.start{
+/* image fone */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 94px 0px 2px;
+gap: 10px;
+
+width: 1295px;
+height: 321px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+h1{
+    /* iPhone 15 Pro Max 256GB Natural Titanium */
+
+width: 770px;
+height: 34px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+h2{
+    /* 49 999 грн */
+
+width: 170px;
+height: 34px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+#buy{
+    /* Button buy */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 21px 69px;
+gap: 10px;
+
+width: 149px;
+height: 55px;
+
+
+border: 2px solid #000000;
+border-radius: 15px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+/* Купити */
+
+width: 142px;
+height: 34px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+
+}
+h3{
+    /* Ємність: */
+
+width: 122px;
+height: 36px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+}
+button{
+    background: #EFCB4A;
+    border: 2px solid #000000;
+border-radius: 15px;
+/* 1 Тб */
+
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* display: flex; */
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.end-div{
+    width: 100%;
+    height: 30px;
+}
+h4{
+    /* Товар в наявності */
+
+/* width: 183px;
+height: 28px; */
+position: absolute;
+right: 1%;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* display: flex;
+align-items: flex-end; */
+text-align: right;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+div{
+    width: 100%;
+}
+img{
+    /* 2529964 1 */
+
+width: 251px;
+height: 306px;
+
+background: url(2529964.jpg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.start1{
+    width: 1295px;
+    height: 121px;
+}

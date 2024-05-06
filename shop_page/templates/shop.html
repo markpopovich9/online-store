@@ -16,4 +16,30 @@ shop page
     <a id="contacts" href="/contacts/">CONTACTS</a>
     <p id="end">{{ name }}</p>
 </div>
+<div class="start1">
+
+</div>
+{% for product in products %}
+    <div class="start">
+        <img src="" alt="">
+        <div>
+            <h1>{{ product.name }}</h1>  
+            <h2>{{product.price}} грн</h2>
+            <button id="buy">Купити</button>
+            <h3>Ємність:</h3>
+            <div>
+                <button>256 Гб</button>
+                <button>512 Гб</button>
+                <button>1 Тб</button>
+            </div>
+            <div class="end-div">
+                <button type="checkbox" class="end" ></button>
+                <h4>Товар в наявності</h4>
+            </div>
+        </div>
+        
+    </div>
+   
+    
+{% endfor %}
 {% endblock %}
