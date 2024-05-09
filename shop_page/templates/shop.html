@@ -21,7 +21,7 @@ shop page
 </div>
 {% for product in products %}
     <div class="start">
-        <img src="" alt="">
+        <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="">
         <div>
             <h1>{{ product.name }}</h1>  
             <h2>{{product.price}} грн</h2>
@@ -33,7 +33,7 @@ shop page
                 <button>1 Тб</button>
             </div>
             <div class="end-div">
-                <button type="checkbox" class="end" ></button>
+                <button type="checkbox" class="end" > ✓ </button>
                 <h4>Товар в наявності</h4>
             </div>
         </div>

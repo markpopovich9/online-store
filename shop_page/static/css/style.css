@@ -7,7 +7,7 @@
     position: absolute;
     top: 4%;
     left: 3%;
-    
+    text-decoration-line: none;
    
     /* HOME */
     /* HOME */
@@ -68,27 +68,28 @@ flex-grow: 0;
 }
 
 #end{
-     /* mykola Skrypnyk */
-     position: absolute;
-     /* width: 1400px; */
-     /* height: 33px; */
-     left: 90%;
-     top: 9px;
+    /* mykola Skrypnyk */
+    position: absolute;
+    /* width: 1400px; */
+    /* height: 33px; */
+    /* left: 90%; */
+    right: 5.85%;
+    top: 9px;
 
-     color: #000000;
+    color: #000000;
  
  
- font-family: 'Inter';
- font-style: normal;
- font-weight: 700;
- font-size: 24px;
- line-height: 29px;
- display: flex;
- text-transform: uppercase;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    text-transform: uppercase;
  
  
  
- }
+}
 a{
 /* HOME */
 
@@ -115,11 +116,12 @@ flex-grow: 0;
 
 
 }
+/* header{position: fixed;} */
 .end{
     position: absolute;
     right: 10%;
     margin-top: 10px;
-    text-align: right;
+    text-align: center;
     /* confirm_9794745 1 */
 
 width: 38.12px;
