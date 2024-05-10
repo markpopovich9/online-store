@@ -205,7 +205,7 @@ order: 1;
 flex-grow: 0;
 
 }
-#buy{
+.buy{
     /* Button buy */
 
 box-sizing: border-box;
@@ -339,7 +339,7 @@ img{
 width: 251px;
 height: 306px;
 
-background: url(2529964.jpg);
+
 
 /* Inside auto layout */
 flex: none;
@@ -350,4 +350,53 @@ flex-grow: 0;
 .start1{
     width: 1295px;
     height: 121px;
+}
+.message{
+    /* Ellipse 1 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 35px;
+height: 35px;
+left: 504.5px;
+top: 13px;
+
+background: #EFCB4A;
+border: 1px solid #000000;
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+z-index: 4;
+
+
+/* 1 */
+border-radius: 15px;
+position: absolute;
+width: 28px;
+height: 27px;
+left: 450px;
+top: 50px;
+color: #000000;
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+font-family: 'Inter';
+
+}
+#message{
+    /* text-align: center; */
+
+margin-left: 7px;
+/* margin-bottom: 80px; */
+
+
+
 }
