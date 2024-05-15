@@ -4,7 +4,7 @@ shop page
 {% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('shop.static', filename = '/css/style.css') }}">
-    <!-- <script src="{{ url_for('shop.static', filename = '/js/script.js') }}"></script> -->
+    <script src="{{ url_for('shop.static', filename = '/js/script.js') }}" defer></script>
 {% endblock %}
 {% block content %}
 
@@ -17,9 +17,8 @@ shop page
     <a id="contacts" href="/contacts/">CONTACTS</a>
     <p id="end">{{ name }}</p>
 </div>
-{% if count != '0' %}
-    <div class="message"><p id="message">{{count}}</p></div>
-{% endif %}
+<div class="message"><p id="message">{{count}}</p></div>
+
 <div class="start1">
 
 </div>
@@ -28,10 +27,10 @@ shop page
         <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="">
         <div>
             <h1>{{ product.name }}</h1>  
-            <h2>{{product.price}} грн</h2>
-            <form method="POST">
-                <button class="buy" type="submit">Купити</button>
-            </form>
+            <h2>{{ product.price }} грн</h2>
+            <!-- <form method="POST"> -->
+            <button class="buy" id = "{{ product.id }}" >Купити</button>
+            <!-- </form> -->
             <h3>Ємність:</h3>
             <div>
                 <button>256 Гб</button>
