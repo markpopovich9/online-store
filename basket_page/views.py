@@ -6,11 +6,12 @@ import pandas
 from project.settings import DATABASE
 def render_basket_page():
     try:
-        count =  len(flask.request.cookies.get('products').split(" ")) # python + flask get
+        count =  flask.request.cookies.get('products').split(" ") # python + flask get
     except:
         count = "0"
     # if flask.request.method == "POST":
         # count = str(int(count) + 1)
+    list_count = {}
     if len(list(Product.query.all())) == 0:
         path_excel=os.path.abspath(__file__ + "/../../shop_page/static/xlsx/Product.xlsx")
         read_excel = pandas.read_excel(io=path_excel,header=None,names=["name", "description","count","price"])
@@ -22,15 +23,20 @@ def render_basket_page():
                 count = row_excel["count"],
                 price = row_excel["price"] 
             )
+            
             DATABASE.session.add(product)
         DATABASE.session.commit()
-                   
+    for product1 in Product.query.all():
+        # print(product1.id)
+        list_count[str(product1.id)] = str(count.count(str(product1.id)))
+        print(type(product1.id))
     # products = {
         
     # }
     
+    # print(count.count("1"))
     # print(cookie_get)
-    print(User.query.count(),User.query.all(),type(User.query.all()))
+    # print(User.query.count(),User.query.all(),type(User.query.all()))
     # for product in User.query.all():
     # if count == None:
     #     count = '0'
@@ -38,6 +44,7 @@ def render_basket_page():
         flask.render_template(template_name_or_list="basket.html",
                               name=flask_login.current_user.login, 
                               products = Product.query.all(),
+                              cookie = list_count
                             #   count = count
                               ))
     return cookie

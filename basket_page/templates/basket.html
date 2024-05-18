@@ -21,31 +21,16 @@ Cart page
 
 <!-- </div> -->
 <!-- <button id="1" class="edit2">+</button> -->
-{% for product in products %}
-    <div class="start">
-        <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="">
-        <div>
-            <p>{{ product.name }}</p>  
-            <button id="{{product.id}}" class="edit1">-</button>
-            <h2 id="count">0</h2>
-            <button id="{{product.id}}" class="edit2">+</button>
-            <!-- <h2 id="price">0</h2> -->
-            <!-- <h3>грн</h3> -->
-            <!-- <h2>{{ product.price }} грн</h2> -->
-            <!-- <button class="buy" id = "{{ product.id }}" >Купити</button> -->
-            <!-- <h3>Ємність:</h3>
+    {% for product in products %}
+        <!-- <h1></h1> -->
+        <div class="start">
+            <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="">
             <div>
-                <button>256 Гб</button>
-                <button>512 Гб</button>
-                <button>1 Тб</button>
+                <p>{{ product.name }}</p>  
+                <button id="{{product.id}}" class="edit1">-</button>
+                <h2 id="count">0</h2>
+                <button id="{{product.id}}" class="edit2">+</button>
             </div>
-            <div class="end-div">
-                
-                <button type="button" class="end" > ✓ </button>
-                <h4>Товар в наявності</h4> -->
-            </div>
-        </div>
-        
-    </div>
-{% endfor %}
+        </div
+    {% endfor %}
 {% endblock %}
