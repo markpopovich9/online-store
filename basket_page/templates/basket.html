@@ -17,20 +17,19 @@ Cart page
     <a id="contacts" href="/contacts/">CONTACTS</a>
     <p id="end">{{ name }}</p>
 </div>
-<!-- <div class="start1"> -->
+<div class="message"><p id="message">{{count}}</p></div>
+{% for product in products %}
 
-<!-- </div> -->
-<!-- <button id="1" class="edit2">+</button> -->
-    {% for product in products %}
-        <!-- <h1></h1> -->
-        <div class="start">
-            <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="">
-            <div>
-                <p>{{ product.name }}</p>  
+    <div class="start" id="{{product.id}}">
+        <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="">
+        <div class="border">
+            <p>{{ product.name }}</p>  
+            <div class="edit">
                 <button id="{{product.id}}" class="edit1">-</button>
                 <h2 id="count">0</h2>
                 <button id="{{product.id}}" class="edit2">+</button>
             </div>
-        </div
-    {% endfor %}
+        </div>
+    </div>
+{% endfor %}
 {% endblock %}

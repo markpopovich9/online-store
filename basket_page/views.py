@@ -44,7 +44,8 @@ def render_basket_page():
         flask.render_template(template_name_or_list="basket.html",
                               name=flask_login.current_user.login, 
                               products = Product.query.all(),
-                              cookie = list_count
+                              cookie = list_count,
+                              count = len(count)
                             #   count = count
                               ))
     return cookie
