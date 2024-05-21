@@ -7,7 +7,9 @@ from registration_page.models import User, Product
 from .app import shop
 def render_shop_page():
     try:
-        count =  len(flask.request.cookies.get('products').split(" ")) # python + flask get
+        count =  len(flask.request.cookies.get('products').split(" "))
+        if flask.request.cookies.get('products').split(" ")[0]== "":
+            count = "0"
     except:
         count = "0"
     # if flask.request.method == "POST":

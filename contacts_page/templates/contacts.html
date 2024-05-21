@@ -16,4 +16,7 @@ shop page
     <a id="contacts" href="/contacts/">CONTACTS</a>
     <p id="end">{{ name }}</p>
 </div>
+{% if count != "0"%}
+<div class="message"><p id="message">{{count}}</p></div>
+{% endif %}
 {% endblock %}

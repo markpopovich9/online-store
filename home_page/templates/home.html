@@ -13,6 +13,9 @@
             <a id="basket" href="/basket/">CART</a>
             <a id="contacts" href="/contacts/">CONTACTS</a>
             <p id="end">{{ code }}</p>
+            {% if count != "0"%}
+                <div class="message"><p id="message">{{count}}</p></div>
+            {% endif %}
         </div>
     {% else %}
         <div>

@@ -1,6 +1,7 @@
 let plusButtons = document.querySelectorAll(".edit2")
 let minusButtons = document.getElementsByClassName("edit1")
 let countText = document.querySelectorAll("#count")
+// if (plusButtons.length = )
 function cordinate(){
     let y = 175
     let borders = document.querySelectorAll(".border")
@@ -23,26 +24,42 @@ function destroy(){
         // console.log(id)
         let div = divs[count]
         let id = div.id
+        try{
         let cookie = document.cookie.split("=")[1].split(" ")
+        
         let count1 = 0
-        console.log(cookie)
+        // console.log(cookie)
         for (let count2 = 0; count2 < cookie.length; count2++ ){
             // console.log(`${cookie[count]}`)/
             if (`${cookie[count2]}`==`${id}`){
                 count1++
             }
         }
-    if(count1 == 0){
-        div.remove()
-
-    }}
+        
+        if(count1 == 0){
+            div.remove()
+        }
+        }catch{
+            div.remove()
+            
+        }
+    }
+    if (document.querySelectorAll(".start").length==0){
+        document.querySelector("#empty").style.display="block"
+        document.querySelector("#message").style.display="none"
+        document.querySelector(".message").style.display="none"
+        document.cookie = ""
+    }
     cordinate()
 }
 destroy()
+
+
 function counting (id){
     console.log(id)
     let text = countText[id-1]
     let cookie = document.cookie.split("=")[1].split(" ")
+    document.querySelector("#message").textContent = `${cookie.length}`
     let count1 = 0
     console.log(cookie)
     for (let count = 0; count < cookie.length; count++ ){
