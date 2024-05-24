@@ -401,3 +401,12 @@ margin-left: 7px;
 
 
 }
+.product{
+    border-left: 3px solid #000000;
+    border-right: 3px solid #000000;
+    height: 300px;
+    /* border-radius: 10px; */
+}
+.inner{
+    margin-left: 30px;
+}
