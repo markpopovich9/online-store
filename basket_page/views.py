@@ -14,14 +14,15 @@ def render_basket_page():
     list_count = {}
     if len(list(Product.query.all())) == 0:
         path_excel=os.path.abspath(__file__ + "/../../shop_page/static/xlsx/Product.xlsx")
-        read_excel = pandas.read_excel(io=path_excel,header=None,names=["name", "description","count","price"])
+        read_excel = pandas.read_excel(io=path_excel,header=None,names=["name", "description","count","price", "discount"])
         for row in read_excel.iterrows():
             row_excel = row[1]
             product  = Product(
                 name= row_excel["name"],
                 description =row_excel["description"],
                 count = row_excel["count"],
-                price = row_excel["price"] 
+                price = row_excel["price"],
+                discount = row_excel["discount"]
             )
             
             DATABASE.session.add(product)

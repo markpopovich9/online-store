@@ -16,14 +16,15 @@ def render_shop_page():
         # count = str(int(count) + 1)
     if len(list(Product.query.all())) == 0:
         path_excel=os.path.abspath(__file__ + "/../static/xlsx/Product.xlsx")
-        read_excel = pandas.read_excel(io=path_excel,header=None,names=["name", "description","count","price"])
+        read_excel = pandas.read_excel(io=path_excel,header=None,names=["name", "description","count","price","discount"])
         for row in read_excel.iterrows():
             row_excel = row[1]
             product  = Product(
                 name= row_excel["name"],
                 description =row_excel["description"],
                 count = row_excel["count"],
-                price = row_excel["price"] 
+                price = row_excel["price"],
+                discount = row_excel["discount"]
             )
             DATABASE.session.add(product)
         DATABASE.session.commit()
@@ -41,7 +42,8 @@ def render_shop_page():
         flask.render_template(template_name_or_list="shop.html",
                               name=flask_login.current_user.login, 
                               products = Product.query.all(),
-                              count = count
+                              count = count,
+                              int = int
                               ))
     # cookie.set_cookie("all", count)
     

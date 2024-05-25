@@ -29,12 +29,25 @@ shop page
             <div class = "inner">
                 
             
-            <h1>{{ product.name }}</h1>  
-            <h2>{{ product.price }} грн</h2>
+            
+            {% if product.discount != 0%}
+                <h1>{{ product.name }}</h1>  
+                <h3 class="price">{{ product.price}} грн</h3>
+                <h3 class="discount">Знижка {{product.discount}}%</h3>
+            {% else %}
+                <style scoped>
+                    #scop {
+                        margin-bottom: 20px;
+                        height: 50px;
+                    }
+                </style>
+                <h1 id="scop">{{ product.name }}</h1>  
+            {% endif %}
+            <h2>{{ int(product.price - product.discount/100*product.price)  }} грн</h2>
             <!-- <form method="POST"> -->
             <button class="buy" id = "{{ product.id }}" >Купити</button>
             <!-- </form> -->
-            <h3>Ємність:</h3>
+            <h3 class="capacity">Ємність:</h3>
             <div>
                 <button>256 Гб</button>
                 <button>512 Гб</button>

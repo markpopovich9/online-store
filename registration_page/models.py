@@ -13,5 +13,6 @@ class Product(DATABASE.Model, flask_login.UserMixin):
     description = DATABASE.Column(DATABASE.Text)
     count = DATABASE.Column(DATABASE.Integer)
     price = DATABASE.Column(DATABASE.Integer)
+    discount = DATABASE.Column(DATABASE.Integer)
     def __repr__(self) -> str:
         return f"id - {self.id}"
