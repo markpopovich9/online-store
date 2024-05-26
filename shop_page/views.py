@@ -43,7 +43,8 @@ def render_shop_page():
                               name=flask_login.current_user.login, 
                               products = Product.query.all(),
                               count = count,
-                              int = int
+                              int = int,
+                              admin = False
                               ))
     # cookie.set_cookie("all", count)
     

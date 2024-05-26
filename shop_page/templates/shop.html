@@ -25,15 +25,37 @@ shop page
 {% for product in products %}
     <div class="start">
         <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="">
+        {% if admin %}
+            <button class = "editorButton img">
+                <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+            </button>
+        {% endif %}
         <div class = "product">
             <div class = "inner">
                 
             
-            
-            {% if product.discount != 0%}
+            {% if admin %}
+                <h1>{{ product.name }}
+                <button class = "editorButton name">
+                    <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                </button>
+                </h1>  
+                <h3 class="price">{{ product.price}} грн
+                    <button class = "editorButton priceButton">
+                        <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                    </button>
+                </h3>
+
+                <h3 class="discount">Знижка {{product.discount}}%
+                    <button class = "editorButton discountButton" >
+                        <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                    </button>
+                </h3>
+            {% elif product.discount != 0 %}
                 <h1>{{ product.name }}</h1>  
                 <h3 class="price">{{ product.price}} грн</h3>
                 <h3 class="discount">Знижка {{product.discount}}%</h3>
+            
             {% else %}
                 <style scoped>
                     #scop {
@@ -48,11 +70,33 @@ shop page
             <button class="buy" id = "{{ product.id }}" >Купити</button>
             <!-- </form> -->
             <h3 class="capacity">Ємність:</h3>
-            <div>
-                <button>256 Гб</button>
-                <button>512 Гб</button>
-                <button>1 Тб</button>
-            </div>
+            {% if admin %}
+                <div>
+                    <button>256 Гб
+                        <button class = "editorButton b1">
+                            <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                        </button>
+                    </button>
+                    
+                    <button>512 Гб
+                        <button class = "editorButton b2">
+                            <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                        </button>
+                    </button>
+                    
+                    <button>1 Тб
+                        <button class = "editorButton b3">
+                            <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                        </button>
+                    </button>
+                </div>
+            {% else %}
+                <div>
+                    <button>256 Гб</button>
+                    <button>512 Гб</button>
+                    <button>1 Тб</button>
+                </div>
+            {% endif %}
             <div class="end-div">
                 <button type="button" class="end" > ✓ </button>
                 <h4>Товар в наявності</h4>
