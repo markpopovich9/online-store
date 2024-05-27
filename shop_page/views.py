@@ -6,6 +6,7 @@ from project.settings import DATABASE
 from registration_page.models import User, Product
 from .app import shop
 def render_shop_page():
+
     try:
         count =  len(flask.request.cookies.get('products').split(" "))
         if flask.request.cookies.get('products').split(" ")[0]== "":
@@ -38,13 +39,16 @@ def render_shop_page():
     # for product in User.query.all():
     # if count == None:
     #     count = '0'
+    list_admins=["Illya","Mykola Skrypnik"]
+    print()
+    admin=flask_login.current_user.login in list_admins
     cookie = flask.make_response(
         flask.render_template(template_name_or_list="shop.html",
                               name=flask_login.current_user.login, 
                               products = Product.query.all(),
                               count = count,
                               int = int,
-                              admin = False
+                              admin =admin
                               ))
     # cookie.set_cookie("all", count)
     

@@ -35,6 +35,12 @@ function cordinate(){
         listPriceDiv[count].style.top = 60
         // listH3[count].previousElementSibling
         // console.log(listH3[count].previousElementSibling.style.width)
+        console.log(listH3[count].tagName)
+        let text1= listH3[count].previousElementSibling.textContent
+        if (text1.length > 3){
+            listH3[count].previousElementSibling.style.marginLeft = -10*(text1.length-4)-5
+        }
+        console.log(text1, text1.length)
         listH3[count].style.left = 60
         listH3[count].style.top = 8
     }

@@ -158,7 +158,9 @@ flex-grow: 0;
 h1{
     /* iPhone 15 Pro Max 256GB Natural Titanium */
 
-width: 770px;
+/* width: 500px; */
+max-width: 700px;
+min-width: 1px;
 height: 1px;
 
 font-family: 'Inter';
@@ -455,7 +457,6 @@ color: #000000;
 .editorImg{
     height: 15px;
     width: 15px;
-    
 }
 .editorButton{
     height: 30px;
@@ -471,6 +472,10 @@ color: #000000;
     display: flex;
     flex-direction: row;
     /* margin-bottom: 10px; */
-
-    /* margin-left: 100px; */
+    /* position: absolute; */
+    /* margin-top: -30px; */
+    /* margin-left: 600px; */
+}
+.product-img{
+    margin-left: 0px;
 }

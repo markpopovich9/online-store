@@ -7,7 +7,21 @@ if (document.cookie=="" || document.querySelector("#message").textContent=="0"){
     document.querySelector(".message").style.display = 'none'
     document.querySelector("#message").style.display = 'none'
 }
+function cordinate(){
+    let names = document.getElementsByClassName("name")
+    let discountButton = document.getElementsByClassName("discountButton")
+    let priceButton = document.getElementsByClassName("priceButton")
+    // let ctx= document.getElementById("canvas").getContent("2d")
+    let h = document.querySelectorAll("h1")
+    let discount = document.getElementsByClassName("discount")
+    let price = document.getElementsByClassName("price")
+    for (let count = 0; count < discount.length; count++){
+        names[count].style.left = 325+h[count].textContent.length*10
+        // console.log(h[count].textContent.length*10)
+    }
+}
 
+// document.querySelector('h1').style.marginTop
 // buttons[0].onclick = () =>{
 //    console.log(11)
 // }
@@ -16,6 +30,7 @@ if (document.cookie=="" || document.querySelector("#message").textContent=="0"){
 // let array = [0,1,2,3,4,5,6,7]
 // let butt?on = 0
 if (edits.length){
+    // cordinate()
     console.log(edits)
     let names = document.getElementsByClassName("name")
     let discountButton = document.getElementsByClassName("discountButton")
@@ -28,6 +43,7 @@ if (edits.length){
     for (let count = 0; count < names.length; count++){
         names[count].addEventListener("click", function (event){
             h[count].textContent=prompt("Вкажіть назві продукту", h[count].textContent)
+            // names[count].style.left = 325+h[count].textContent.length*10
         }) 
     }
     for (let count = 0; count < discount.length; count++){

@@ -297,7 +297,7 @@ img{
     display: flex;
     width: 251px;
     height: 306px;
-    margin-left: 50;
+    /* margin-left: 50; */
 }
 .edit{
     position: absolute;
