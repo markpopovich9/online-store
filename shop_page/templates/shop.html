@@ -26,9 +26,12 @@ shop page
     <div class="start">
         <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="" class="product-img">
         {% if admin %}
-            <button class = "editorButton img">
-                <img type='image' name="img" src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
-            </button>
+            <form action="" method="post">
+                <button class = "editorButton img" name="img" type="submit" value="{{product.id}}">
+                    <img  src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                </button>
+            </form>
+           
         {% endif %}
         <div class = "product">
             <div class = "inner">
@@ -110,5 +113,18 @@ shop page
    
     
 {% endfor %}
-<canvas id="canvas"></canvas>
+{% if mod %}
+    <form class="modal_window" method="post">
+        {% if type == "TEXT" %}
+            <h1>CHANGE TEXT:</h1>
+            <input type="text" name="text" id="">
+        {% elif type == "IMG" %}
+            <h1>CHANGE IMAGE</h1>
+            <input type = "file" name = "image" accept= "image/*">
+        {% endif %}
+        <button class="send_button" name = "send" value = "{{id}};type1">SEND</button>
+    </form>
+    <div class="background"></div>
+{% endif %}
+<!-- <canvas id="canvas"></canvas> -->
 {% endblock %}

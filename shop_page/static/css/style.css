@@ -479,3 +479,70 @@ color: #000000;
 .product-img{
     margin-left: 0px;
 }
+.background{
+    /* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 109px 369px;
+gap: 10px;
+
+position: absolute;
+width: 1000%;
+height: 1000%;
+left: 0px;
+top: 0px;
+
+background: rgba(255, 255, 255, 0.7);
+border: 0px solid #000000;
+border-radius: 0px;
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+z-index: 2;
+}
+.modal_window{
+    /* Modal  confirmed */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+position: fixed;
+top: 29%;
+left: 32%;
+/* margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto; */
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+isolation: isolate;
+
+width: 700px;
+height: 350px;
+
+background: #FFFFFF;
+border: 3px solid #000000;
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 5;
+
+
+
+/* Modal Confirmed */
+
+
+
+
+
+}
