@@ -39,20 +39,21 @@ shop page
             
             {% if admin %}
                 <h1>{{ product.name }}
-                    <button class = "editorButton name">
-                        <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
-                    </button>
+                    <form method="post">
+                        <button class = "editorButton name" name="name" type="submit" value="{{product.id}}">
+                            <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                        </button> 
+                    </form>
                 </h1>  
                 
-                
                 <h3 class="price">{{ product.price}} грн
-                    <button class = "editorButton priceButton">
+                    <button class = "editorButton priceButton" name="name" type="submit" value="{{product.id}}">
                         <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                     </button>
                 </h3>
 
                 <h3 class="discount">Знижка {{product.discount}}%
-                    <button class = "editorButton discountButton" >
+                    <button class = "editorButton discountButton">
                         <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                     </button>
                 </h3>
@@ -114,16 +115,20 @@ shop page
     
 {% endfor %}
 {% if mod %}
-    <form class="modal_window" method="post">
-        {% if type == "TEXT" %}
+    {% if type == "TEXT" or type == "NAME" %}
+        <form class="modal_window" method="post">
+            
             <h1>CHANGE TEXT:</h1>
-            <input type="text" name="text" id="">
-        {% elif type == "IMG" %}
+            <input type="text" name="text" id="" >
+            <button class="send_button" name = "send" value = "{{id}};{{type}}">SEND</button>
+        </form>
+    {% elif type == "IMG" %}
+        <form class="modal_window" method="post" enctype="multipart/form-data">
             <h1>CHANGE IMAGE</h1>
             <input type = "file" name = "image" accept= "image/*">
-        {% endif %}
-        <button class="send_button" name = "send" value = "{{id}};type1">SEND</button>
-    </form>
+            <button class="send_button" name = "send" value = "{{id}};{{type}}">SEND</button>
+        </form>
+    {% endif %}
     <div class="background"></div>
 {% endif %}
 <!-- <canvas id="canvas"></canvas> -->

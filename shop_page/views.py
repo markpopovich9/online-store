@@ -12,31 +12,64 @@ def render_shop_page():
     id = None
     if flask.request.method == "POST":
         try:
-        
-            if flask.request.form["send"].split(";")[1] == "IMG":
-            
+            flask.request.form["send"].split(";")[1]
+            type1 = flask.request.form["send"].split(";")[1]
+            if type1 == "IMG":
+                id = int(flask.request.form["send"].split(";")[0])
+                path= os.path.abspath(__file__ + "/../static/image/"+ Product.query.all()[id-1].name+ ".png") 
+                os.remove(path)
+
                 print(flask.request.form["send"])
-                print(os.path.abspath(__file__+"/../static/image"))
-                
+
+                # print(os.path.abspath(__file__+"/../static/image"))
+                print(path)
                 img = flask.request.files.get('image')
+                img.save(path)
                 print(img, type(img))
                 # image = Image.open(img)
                 # print(image, type(image))
                 # image.show()
-            elif flask.request.form["send"].split(";")[1] == "TEXT":
+                os.rename
+            elif type1== "TEXT" or type1 == "NAME":
                 text = flask.request.form["text"]
                 id = flask.request.form["send"].split(";")[0]
+                list_products = Product.query.all()
                 for product in Product.query.all():
-                    if product.id == id:
-                        product.name = text
-        except :
+                    Product.query.filter_by(id = product.id).delete()
+                print(124)
+                for product_data in list_products:
+                    name = product_data.name
+                    print( product_data.id,id)
+                    if product_data.id == int(id):
+                        path1 = os.path.abspath(__file__ + "/../static/image/"+name+ ".png")
+                        path2 = os.path.abspath(__file__ + "/../static/image/"+text+ ".png")
+                        os.rename(path1,path2)
+                        name = text
+                        # print(123)
+                    # print(126)
+                    product  = Product(
+                        name= name ,
+                        description =product_data.description,
+                        count = product_data.count,
+                        price = product_data.price,
+                        discount = product_data.discount
+                    )
+                    DATABASE.session.add(product)
+                print(125)
+                DATABASE.session.commit()
+        except Exception as Error:
+            print(Error)
             try:
                 print(flask.request.form['img'])
                 id = flask.request.form['img']
                 type1 = "IMG"
                 
             except:
-                pass
+                try:
+                    id = flask.request.form['name']
+                    type1 = "NAME"
+                except:
+                    pass
             mod = True
     try:
         count =  len(flask.request.cookies.get('products').split(" "))
