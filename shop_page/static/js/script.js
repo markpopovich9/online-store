@@ -16,11 +16,15 @@ function cordinate(){
     let discount = document.getElementsByClassName("discount")
     let price = document.getElementsByClassName("price")
     for (let count = 0; count < discount.length; count++){
-        names[count].style.left = 1000
-        names[count].style.top = count*321+145
+        // names[count].style.left = 1000
+        // names[count].style.top = count*321+145
+        priceButton[count].style.top = count*321+180
+        priceButton[count].style.left = 450 
         // console.log(h[count].textContent.length*10)
     }
+
 }
+cordinate()
 // cordinate()
 // document.querySelector('h1').style.marginTop
 // buttons[0].onclick = () =>{

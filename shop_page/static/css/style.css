@@ -186,7 +186,7 @@ flex-direction: row;
 h2{
     /* 49 999 грн */
 
-width: 170px;
+width: 500px;
 height: 1px;
 
 font-family: 'Inter';
@@ -418,7 +418,7 @@ margin-left: 7px;
     /* position: absolute; */
     /* margin-top: -5px; */
     /* 50 999 грн */
-
+/* width: 500px; */
 height: 19px;
 font-family: 'Inter';
 font-style: normal;
@@ -551,6 +551,63 @@ z-index: 5;
 
 
 }
+#text{
+    border-radius: 10px;
+    height: 74px;
+    width: 450px;
+}
+.send-button{
+    /* SEND */
+
+width: 446px;
+height: 51px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+/* display: flex; */
+align-items: center;
+text-align: center;
+text-decoration-line: underline;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+/* flex: none;
+order: 1;
+flex-grow: 0; */
+background: none;
+border: none;
+/* background-color: ; */
+}
+.name-edit{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: left;
+    align-items: left;
+    
+    /* display: flex;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    flex: none;
+    order: 0;
+    flex-direction: column; */
+    position:fixed;
+    top: 320px;
+    left: 740px;
+    /* flex-grow: 43; */
+}
 /* form{
     margin: 0;
 } */
+.priceButton{
+    /* margin-left: 500px; */
+    position: absolute;
+}

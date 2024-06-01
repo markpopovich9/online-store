@@ -47,9 +47,11 @@ shop page
                 </h1>  
                 
                 <h3 class="price">{{ product.price}} грн
-                    <button class = "editorButton priceButton" name="name" type="submit" value="{{product.id}}">
-                        <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
-                    </button>
+                    <form method="post">
+                        <button class = "editorButton priceButton" name="price" type="submit" value="{{product.id}}" >
+                            <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                        </button>
+                    </form>
                 </h3>
 
                 <h3 class="discount">Знижка {{product.discount}}%
@@ -115,19 +117,20 @@ shop page
     
 {% endfor %}
 {% if mod %}
-    {% if type == "TEXT" or type == "NAME" %}
+    {% if type == "IMG" %}
+        <form class="modal_window" method="post" enctype="multipart/form-data">
+            <h1 class="name-edit">CHANGE IMAGE</h1>
+            <input type = "file" name = "image" accept= "image/*">
+            <button class="send-button" name = "send" value = "{{id}};{{type}}">SEND</button>
+        </form>
+    {% else  %}
         <form class="modal_window" method="post">
             
-            <h1>CHANGE TEXT:</h1>
-            <input type="text" name="text" id="" >
-            <button class="send_button" name = "send" value = "{{id}};{{type}}">SEND</button>
+            <h1 class="name-edit">CHANGE TEXT:</h1>
+            <input type="text" name="text" id="text" >
+            <button class="send-button" name = "send" value = "{{id}};{{type}}">SEND</button>
         </form>
-    {% elif type == "IMG" %}
-        <form class="modal_window" method="post" enctype="multipart/form-data">
-            <h1>CHANGE IMAGE</h1>
-            <input type = "file" name = "image" accept= "image/*">
-            <button class="send_button" name = "send" value = "{{id}};{{type}}">SEND</button>
-        </form>
+    
     {% endif %}
     <div class="background"></div>
 {% endif %}
