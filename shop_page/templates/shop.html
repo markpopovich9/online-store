@@ -55,9 +55,11 @@ shop page
                 </h3>
 
                 <h3 class="discount">Знижка {{product.discount}}%
-                    <button class = "editorButton discountButton">
-                        <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
-                    </button>
+                    <form method="post">
+                        <button class = "editorButton discountButton" name="discount" type="submit" value="{{ product.id}}">
+                            <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
+                        </button>
+                    </form>
                 </h3>
             {% elif product.discount != 0 %}
                 <h1>{{ product.name }}</h1>  
@@ -79,30 +81,30 @@ shop page
             <!-- </form> -->
             <h3 class="capacity">Ємність:</h3>
             {% if admin %}
-                <div>
-                    <button >256 Гб
+                <div id = "{{ product.id}}">
+                    <button class = "orange capacityButton" id = "{{ product.id}}">256 Гб
                         <button class = "editorButton b1">
                             <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                         </button>
                     </button>
                     
-                    <button>512 Гб
+                    <button class = "white capacityButton" id = "{{ product.id}}">512 Гб
                         <button class = "editorButton b2">
                             <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                         </button>
                     </button>
-                    
-                    <button>1 Тб
-                        <button class = "editorButton b3">
+                    <!-- Capacity -->
+                    <button class="white capacityButton" id = "{{ product.id}}">1 Тб
+                        <button class = "editorButton b3" >
                             <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                         </button>
                     </button>
                 </div>
             {% else %}
-                <div>
-                    <button>256 Гб</button>
-                    <button>512 Гб</button>
-                    <button>1 Тб</button>
+                <div id = "{{ product.id }}">
+                    <button class="orange capacityButton" id = "{{ product.id}}">256 Гб</button>
+                    <button class="white capacityButton" id = "{{ product.id}}">512 Гб</button>
+                    <button class="white capacityButton" id = "{{ product.id}}">1 Тб</button>
                 </div>
             {% endif %}
             <div class="end-div">

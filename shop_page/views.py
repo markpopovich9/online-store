@@ -9,7 +9,8 @@ from PIL import Image
 dict_types={
     "IMG":"IMG",
     "NAME":"TEXT",
-    "PRICE":"INT"
+    "PRICE":"INT",
+    "DISCOUNT": "INT"
 }
 def render_shop_page():
     mod = False
@@ -68,6 +69,9 @@ def render_shop_page():
                                 name = text
                             elif type1 == "PRICE":
                                 price = flask.request.form['text']
+                            elif type1 == "DISCOUNT":
+                                discount = flask.request.form['text']
+                            
                             # print(123)
                         # print(126)
                         product  = Product(
@@ -104,7 +108,11 @@ def render_shop_page():
                         type1 = "PRICE"
                         print('2')
                     except:
-                        pass
+                        try:
+                            id  = flask.request.form['discount']
+                            type1 = "DISCOUNT"
+                        except:
+                            pass
             mod = True
     try:
         count =  len(flask.request.cookies.get('products').split(" "))

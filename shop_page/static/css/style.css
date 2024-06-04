@@ -611,3 +611,31 @@ border: none;
     /* margin-left: 500px; */
     position: absolute;
 }
+.discountButton{
+    position: absolute;
+}
+.input{
+    /* Ємність: */
+
+width: 122px;
+height: 22px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 240px;
+line-height: 29px;
+/* display: flex;
+align-items: center;
+text-align: center; */
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+/* flex: none;
+order: 5;
+flex-grow: 0; */
+
+}
