@@ -30,7 +30,7 @@ def render_shop_page():
 
                 # print(os.path.abspath(__file__+"/../static/image"))
                 print(path)
-                img = flask.request.files.get('image')
+                img = flask.request.files.get('data')
                 print(img.filename, 11)
                 if img.filename != "":
                     os.remove(path)
@@ -42,7 +42,7 @@ def render_shop_page():
                 os.rename
             elif dict_types[type1] == "TEXT" or dict_types[type1] == "INT":
                 next = True
-                text = flask.request.form['text']
+                text = flask.request.form['data']
                 if dict_types[type1] == "INT":
                     try:
                         int(text)
@@ -68,9 +68,9 @@ def render_shop_page():
                                 os.rename(path1,path2)
                                 name = text
                             elif type1 == "PRICE":
-                                price = flask.request.form['text']
+                                price = flask.request.form['data']
                             elif type1 == "DISCOUNT":
-                                discount = flask.request.form['text']
+                                discount = flask.request.form['data']
                             
                             # print(123)
                         # print(126)

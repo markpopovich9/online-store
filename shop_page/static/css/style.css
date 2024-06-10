@@ -472,7 +472,7 @@ color: #000000;
 
 .name{
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     flex-direction: row;
     /* left: 600px; */
     /* top: 20px; */
@@ -508,7 +508,7 @@ order: 2;
 flex-grow: 0;
 z-index: 2;
 }
-.modal_window{
+.modal-window{
     /* Modal  confirmed */
 
 box-sizing: border-box;

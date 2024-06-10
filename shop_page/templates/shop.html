@@ -4,7 +4,7 @@ shop page
 {% endblock %}
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('shop.static', filename = '/css/style.css') }}">
-    <script src="{{ url_for('shop.static', filename = '/js/script.js') }}" defer></script>
+    <script type="module" src="{{ url_for('shop.static', filename = '/js/main.js') }}" defer></script>
 {% endblock %}
 {% block content %}
 
@@ -26,11 +26,11 @@ shop page
     <div class="start">
         <img src="{{ url_for('shop.static', filename = '/image/') }}{{ product.name }}.png" alt="" class="product-img">
         {% if admin %}
-            <form action="" method="post">
+            <!-- <form action="" method="post"> -->
                 <button class = "editorButton img" name="img" type="submit" value="{{product.id}}">
                     <img  src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                 </button>
-            </form>
+            <!-- </form> -->
            
         {% endif %}
         <div class = "product">
@@ -39,27 +39,27 @@ shop page
             
             {% if admin %}
                 <h1>{{ product.name }}
-                    <form method="post">
+                    <!-- <form method="post"> -->
                         <button class = "editorButton name" name="name" type="submit" value="{{product.id}}">
                             <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                         </button> 
-                    </form>
+                    <!-- </form> -->
                 </h1>  
                 
                 <h3 class="price">{{ product.price}} грн
-                    <form method="post">
+                    <!-- <form method="post"> -->
                         <button class = "editorButton priceButton" name="price" type="submit" value="{{product.id}}" >
                             <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                         </button>
-                    </form>
+                    <!-- </form> -->
                 </h3>
 
                 <h3 class="discount">Знижка {{product.discount}}%
-                    <form method="post">
+                    <!-- <form method="post"> -->
                         <button class = "editorButton discountButton" name="discount" type="submit" value="{{ product.id}}">
                             <img src="{{ url_for('shop.static', filename = '/image/') }}Vector.png" class = "editorImg" alt="">
                         </button>
-                    </form>
+                    <!-- </form> -->
                 </h3>
             {% elif product.discount != 0 %}
                 <h1>{{ product.name }}</h1>  
@@ -118,23 +118,12 @@ shop page
    
     
 {% endfor %}
-{% if mod %}
-    {% if type == "IMG" %}
-        <form class="modal_window" method="post" enctype="multipart/form-data">
-            <h1 class="name-edit">CHANGE IMAGE</h1>
-            <input type = "file" name = "image" accept= "image/*">
-            <button class="send-button" name = "send" value = "{{id}};{{type}}">SEND</button>
-        </form>
-    {% else  %}
-        <form class="modal_window" method="post">
-            
-            <h1 class="name-edit">CHANGE TEXT:</h1>
-            <input type="text" name="text" id="text" >
-            <button class="send-button" name = "send" value = "{{id}};{{type}}">SEND</button>
-        </form>
-    
-    {% endif %}
-    <div class="background"></div>
-{% endif %}
-<!-- <canvas id="canvas"></canvas> -->
+
+<form class="modal-window" method="post" enctype="multipart/form-data" style="display: none;">
+    <h1 class="name-edit">CHANGE IMAGE</h1>
+    <input type = "file" name = "data" accept= "" class="modal-input">
+    <button class="send-button" name = "send" value = "{{id}};{{type}}">SEND</button>
+</form>
+
+<div class="background" style="display: none;"></div>
 {% endblock %}
