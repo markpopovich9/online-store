@@ -50,39 +50,45 @@ def render_shop_page():
                         next = False
                 if text != "" and next:
                     id = flask.request.form["send"].split(";")[0]
-                    list_products = Product.query.all()
-                    for product in Product.query.all():
-                        Product.query.filter_by(id = product.id).delete()
-                    print(124)
-                    for product_data in list_products:
-                        name = product_data.name
-                        count = product_data.count
-                        price = product_data.price
-                        discount = product_data.discount
-                        print(name,price,discount, count)
-                        if product_data.id == int(id):
-                            if type1 == "NAME":
+                    if type1 == "NAME":
+                        path1 = os.path.abspath(__file__ + "/../static/image/"+Product.query.get(id).name+ ".png")
+                        path2 = os.path.abspath(__file__ + "/../static/image/"+text+ ".png")
+                        Product.query.get(id).name = text
+                        os.rename(path1,path2)
+                    if type1 == "PRICE":
+                        Product.query.get(id).price = text
+                    if type1 == "DISCOUNT":
+                        Product.query.get(id).discount = text
+                    # list_products = Product.query.all()
+                    # for product in Product.query.all():
+                    #     Product.query.filter_by(id = product.id).delete()
+                    # print(124)
+                    # for product_data in list_products:
+                    #     name = product_data.name
+                    #     count = product_data.count
+                    #     price = product_data.price
+                    #     discount = product_data.discount
+                    #     print(name,price,discount, count)
+                    #     if product_data.id == int(id):
+                    #         if type1 == "NAME":
 
-                                path1 = os.path.abspath(__file__ + "/../static/image/"+name+ ".png")
-                                path2 = os.path.abspath(__file__ + "/../static/image/"+text+ ".png")
-                                os.rename(path1,path2)
-                                name = text
-                            elif type1 == "PRICE":
-                                price = flask.request.form['data']
-                            elif type1 == "DISCOUNT":
-                                discount = flask.request.form['data']
+                    #             name = text
+                    #         elif type1 == "PRICE":
+                    #             price = flask.request.form['data']
+                    #         elif type1 == "DISCOUNT":
+                    #             discount = flask.request.form['data']
                             
-                            # print(123)
-                        # print(126)
-                        product  = Product(
-                            name= name ,
-                            description =product_data.description,
-                            count = count,
-                            price = price,
-                            discount = discount
-                        )
-                        DATABASE.session.add(product)
-                    print(125)
+                    #         # print(123)
+                    #     # print(126)
+                    #     product  = Product(
+                    #         name= name ,
+                    #         description =product_data.description,
+                    #         count = count,
+                    #         price = price,
+                    #         discount = discount
+                    #     )
+                    #     DATABASE.session.add(product)
+                    # print(125)
                     DATABASE.session.commit()
             # elif dict_types[type1] == "INT":
             #     try:
@@ -133,7 +139,10 @@ def render_shop_page():
                 description =row_excel["description"],
                 count = row_excel["count"],
                 price = row_excel["price"],
-                discount = row_excel["discount"]
+                discount = row_excel["discount"],
+                capacity1 = "256 Гб",
+                capacity2 = "512 Гб",
+                capacity3 = "1 Тб"
             )
             DATABASE.session.add(product)
         DATABASE.session.commit()

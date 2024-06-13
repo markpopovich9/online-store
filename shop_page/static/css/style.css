@@ -352,7 +352,7 @@ flex-grow: 0;
 }
 .start1{
     width: 1295px;
-    height: 121px;
+    height: 75px;
 }
 .message{
     /* Ellipse 1 */
@@ -637,5 +637,74 @@ color: #000000;
 /* flex: none;
 order: 5;
 flex-grow: 0; */
+
+}
+.modal-input{
+    /* Frame 37 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px;
+gap: 10px;
+
+/* position: absolute; */
+width: 469px;
+height: 75px;
+left: 115.5px;
+top: 139.25px;
+
+border: 2px solid #000000;
+border-radius: 15px;
+/* Frame 38 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 1px 31px;
+gap: 10px;
+
+width: 241px;
+height: 55px;
+
+background: #D1D8DB;
+border: 1px solid #000000;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.addText{
+    /* Додати продукт */
+
+/* position: absolute; */
+/* width: 163px; */
+height: 35px;
+/* left: 1098px; */
+/* top: 21.5px; */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: left;
+text-transform: uppercase;
+/* text-align: ; */
+margin-left: 1650px;
+color: #000000;
+
 
 }
