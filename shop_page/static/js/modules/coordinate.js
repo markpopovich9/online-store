@@ -7,6 +7,8 @@ function cordinate(){
     let h = document.querySelectorAll("h1")
     let discount = document.getElementsByClassName("discount")
     let price = document.getElementsByClassName("price")
+    let deleteP = document.getElementsByClassName("deleteP")
+    let deleteImg = document.getElementsByClassName("deleteImg")
     // for (let count = 0; count < discount.length; count++){
     //     // names[count].style.left = 1000
     //     // names[count].style.top = count*321+145
@@ -16,11 +18,18 @@ function cordinate(){
     //     discountButton[count].style.top = count*321+210
     //     // console.log(h[count].textContent.length*10)
     // }
+    let y = 420
     let buttons = document.getElementsByClassName("buy")
+    for (let count = 0; count < deleteImg.length; count++){
+        deleteImg[count].style.top = y
+        deleteP[count].style.top = y
+        y += 320
+    }
     if (document.cookie=="" || document.querySelector("#message").textContent=="0"){
         console.log(document.querySelector("#message").innerHTML)
         document.querySelector(".message").style.display = 'none'
         document.querySelector("#message").style.display = 'none'
     }
+    
 }
 export default cordinate

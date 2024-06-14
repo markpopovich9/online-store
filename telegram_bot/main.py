@@ -1,6 +1,6 @@
 import telebot
-from modules import get_data, edit_data
-
+from .modules.sqlite import get_data, edit_data, delete_data
+import threading
 
 inline_button3 = telebot.types.InlineKeyboardButton(text= "GET USERS", callback_data="GET")
 # inline_button4 = telebot.types.InlineKeyboardButton(text= "GET ADMIN", callback_data="ADMIN")
@@ -36,7 +36,12 @@ def start(message: telebot.types.Message):
 #             break  
     
 #     print(callback.message.chat.id)
-
+@bot.callback_query_handler(lambda call: True if "DELETE" in call.data else False)
+def delete(callback: telebot.types.CallbackQuery):
+    # data - DELETE_2
+    id = callback.data.split("_")[-1]
+    delete_data(id=id)
+    bot.delete_message(chat_id=callback.message.chat.id, message_id= callback.message.message_id)
 @bot.callback_query_handler(lambda call: True if call.data == "GET" else False)
 def callbacks(callback: telebot.types.CallbackQuery):
     for count in range(len(get_data("id"))):
@@ -71,4 +76,5 @@ def admin(callback: telebot.types.CallbackQuery):
     text = "min: ".join(text)
     bot.edit_message_text(text,chat_id=callback.message.chat.id,message_id= callback.message.message_id, reply_markup= inline_keyboard2) 
     edit_data(id=id, data= not value)
-bot.polling()
+threading.Thread(target=lambda: bot.infinity_polling(skip_pending=True)).start()
+# bot.infinity_polling()

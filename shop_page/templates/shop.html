@@ -117,6 +117,12 @@ shop page
                 <h4>Товар в наявності</h4>
             </div>
             </div>
+            <form class="deleteForm" method="post">
+                
+                <img src="{{ url_for('shop.static', filename = '/image/')}}Delete.png" alt="" class="delete deleteImg">
+                <button class="delete deleteP" type="submit" name="delete" value="{{product.id}}">Видалити Товар</button>
+                <!-- <button></button> -->
+            </form>
         </div>
         
     </div>

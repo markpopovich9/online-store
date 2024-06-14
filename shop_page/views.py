@@ -19,6 +19,7 @@ def render_shop_page():
     if flask.request.method == "POST":
         try:
             flask.request.form["send"].split(";")[1]
+            print('heloo2323')
             type1 = flask.request.form["send"].split(";")[1]
 
             if type1 == "IMG":
@@ -33,7 +34,10 @@ def render_shop_page():
                 img = flask.request.files.get('data')
                 print(img.filename, 11)
                 if img.filename != "":
-                    os.remove(path)
+                    try:
+                        os.remove(path)
+                    except:
+                        pass
                     img.save(path)
                 print(img, type(img))
                 # image = Image.open(img)
@@ -97,10 +101,12 @@ def render_shop_page():
         except Exception as Error:
             print(Error)
             try:
-                print(flask.request.form['img'])
-                id = flask.request.form['img']
-                type1 = "IMG"
-                
+                print('hello')
+                id =flask.request.form['delete']
+                product = Product.query.get(id)
+                DATABASE.session.delete(product)
+                DATABASE.session.commit()
+                os.remove(os.path.abspath(__file__ + "/../static/image/"+product.name+ ".png"))
             except:
                 try:
                     id = flask.request.form['name']
@@ -156,9 +162,9 @@ def render_shop_page():
     # for product in User.query.all():
     # if count == None:
     #     count = '0'
-    list_admins=["Illya","Mykola Skrypnik"]
+    # list_admins=["Illya","Mykola Skrypnik"]
     print()
-    admin=flask_login.current_user.login in list_admins
+    admin=flask_login.current_user.is_admin
     cookie = flask.make_response(
         flask.render_template(template_name_or_list="shop.html",
                               name=flask_login.current_user.login, 

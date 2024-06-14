@@ -708,3 +708,43 @@ color: #000000;
 
 
 }
+.deleteImg{
+    height: 37px;
+    width: 31px;
+    position: absolute;
+    top: 50px;
+    left: 1070px;
+}
+.deleteP{
+    position: absolute;
+    top: 50px;
+    left: 1130px;
+    /* Видалити товар */
+
+width: 183px;
+height: 37px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+/* flex: /none; */
+/* order: 1; */
+/* flex-grow: 0; */
+border: 0px;
+background: none;
+}
+.plus{
+    height: 30px;
+    width: 30px;
+}
