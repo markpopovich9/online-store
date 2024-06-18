@@ -23,7 +23,7 @@ shop page
     
 </div>
 <div class = "add">
-    <p class = "addText">Додати продукт<button class = 'editorButton plus'>+</button></p>
+    <p class = "addText">Додати продукт<button class = 'editorButton plus'><img  src="{{ url_for('shop.static', filename = '/image/') }}plus.png" class = "plusImg" alt=""></button></p>
 
     
 </div>
@@ -112,17 +112,20 @@ shop page
                     <button class="white capacityButton" id = "{{ product.id}}">1 Тб</button>
                 </div>
             {% endif %}
-            <div class="end-div">
-                <button type="button" class="end" > ✓ </button>
-                <h4>Товар в наявності</h4>
+            {% if admin %}
+                <form class="deleteForm" method="post">
+                    
+                    <img src="{{ url_for('shop.static', filename = '/image/')}}Delete.png" alt="" class="delete deleteImg">
+                    <button class="delete deleteP" type="submit" name="delete" value="{{product.id}}">Видалити Товар</button>
+                    <!-- <button></button> -->
+                </form>
+            {% else %}
+                <div class="deleteForm">
+                    <button type="button" class="end" > ✓ </button>
+                    <h4  class="deleteP">Товар в наявності</h4>
+                </div>
+            {% endif %}
             </div>
-            </div>
-            <form class="deleteForm" method="post">
-                
-                <img src="{{ url_for('shop.static', filename = '/image/')}}Delete.png" alt="" class="delete deleteImg">
-                <button class="delete deleteP" type="submit" name="delete" value="{{product.id}}">Видалити Товар</button>
-                <!-- <button></button> -->
-            </form>
         </div>
         
     </div>
@@ -131,9 +134,29 @@ shop page
 {% endfor %}
 
 <form class="modal-window" method="post" enctype="multipart/form-data" style="display: none;">
-    <h1 class="name-edit">CHANGE IMAGE</h1>
+    <h1 class="name-edit change">CHANGE IMAGE:</h1>
     <input type = "file" name = "data" accept= "" class="modal-input">
     <button class="send-button" name = "send" value = "{{id}};{{type}}">SEND</button>
+</form>
+<form class="modal-window-add" method="post" enctype="multipart/form-data" style="display: none;">
+    <h1 class="new-product">NEW PRODUCT</h1>
+    <h1 class="name-edit add">IMAGE PRODUCT:</h1>
+    <input type = "file" name = "image" accept= "image/*" class="modal-input add">
+    <h1 class="name-edit add">NAME PRODUCT:</h1>
+    <input type = "text" name = "name" class="modal-input add">
+    <h1 class="name-edit add">DESCRIPTION PRODUCT:</h1>
+    <!-- <input type = "text" name = "description" class="modal-input" > -->
+    <textarea name="description"class="modal-input add" ></textarea>
+    
+    <h1 class="name-edit add">PRICE PRODUCT:</h1>
+    <input type = "text" name = "price" class="modal-input add">
+
+    <h1 class="name-edit add">DISCOUNT PRODUCT:</h1>
+    <input type = "text" name = "discount" class="modal-input add">
+    
+    <h1 class="name-edit add">COUNT PRODUCT:</h1>
+    <input type = "text" name = "count" class="modal-input add">
+    <button class="send-button" name="add_product" value="NEW" >Send</button>
 </form>
 
 <div class="background" style="display: none;"></div>

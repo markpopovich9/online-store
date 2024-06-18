@@ -109,22 +109,30 @@ def render_shop_page():
                 os.remove(os.path.abspath(__file__ + "/../static/image/"+product.name+ ".png"))
             except:
                 try:
-                    id = flask.request.form['name']
-                    type1 = "NAME"
+                    flask.request.form['add_product']
+                    product =  Product(
+                        name= flask.request.form["name"],
+                        description =flask.request.form["description"],
+                        count = flask.request.form["count"],
+                        price = flask.request.form["price"],
+                        discount = flask.request.form["discount"],
+                        capacity1 = "256 Гб",
+                        capacity2 = "512 Гб",
+                        capacity3 = "1 Тб"
+                    )
+                    next = True
+                    for product_data in Product.query.all():
+                        if product.name == product_data.name:
+                            next = False
+                    if next:
+                        flask.request.files["image"].save(os.path.abspath(__file__ + "/../static/image/"+product.name+ ".png"))
+                        DATABASE.session.add(product)
+                        DATABASE.session.commit()
+                        print(product)
                 except:
                     
-                    try:
-                        print(flask.request.form)
-                        id = flask.request.form['price']
-                        print('1')
-                        type1 = "PRICE"
-                        print('2')
-                    except:
-                        try:
-                            id  = flask.request.form['discount']
-                            type1 = "DISCOUNT"
-                        except:
-                            pass
+                    
+                    pass
             mod = True
     try:
         count =  len(flask.request.cookies.get('products').split(" "))
