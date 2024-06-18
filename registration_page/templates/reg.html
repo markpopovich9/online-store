@@ -6,12 +6,7 @@
 
 {% block content %}
     <a href="/reg/">Registration</a>
-    {% if code %}
-        <div>
-            <h1>CONFIRMED</h1>
-            <a href = '/log/'>{{ code }}</a>
-        </div>
-    {% endif %}
+    
     <form method="post">
         <p class="login">Login</p>
         <input type="text" id="login" name="login" required>
@@ -24,7 +19,13 @@
 
         <button id="send">Send</button>
     </form>
-    
+    {% if code %}
+        <div>
+            <h1>CONFIRMED</h1>
+            <a href = '/login/' id="log">{{ code }}</a>
+        </div>
+        <div id="background"></div>
+    {% endif %}
     
 {% endblock %}
 

@@ -15,7 +15,13 @@
         
         <button id="send">Send</button>
     </form>
-    
+    {% if code %}
+        <div>
+            <h1>YOU ARE NOT REGISTERED </h1>
+            <a href = '/reg/' id="reg">{{ code }}</a>
+        </div>
+        <div id="background"></div>
+    {% endif %}
 {% endblock %}
 
 

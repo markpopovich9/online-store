@@ -5,10 +5,21 @@
 {% endblock %}
 
 {% block content %}
-    <div>
-        <a href="/reg/" id="first">Registration </a>
-        <a href="/login/">Autorization</a>
-    </div>
+    {% if code %}
+        <div id="log">
+
+            <p class="first">HOME</p>
+            <p>SHOP</p>
+            <p>{{ code }}</p>
+            <p>{{ code }}</p>
+            <p>{{ code }}</p>
+        </div>
+    {% else %}
+        <div>
+            <a href="/reg/" id="first">Registration </a>
+            <a href="/login/">Autorization</a>
+        </div>
+    {% endif %}
     <h1>HOME PAGE</h1>
 {% endblock %}
 

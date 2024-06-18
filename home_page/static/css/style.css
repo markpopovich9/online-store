@@ -1,5 +1,60 @@
+@font-face {
+    font-family: "Inter";
+    src: url(fonts/Inter-Regular.woff2);
+}
+.first{
+    margin-left: 35%;
+}
+p{
+    /* HOME */
+
+/* HOME */
+
+width: 238px;
+height: 44px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
 
 
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+}
+#log{
+    /* Frame 2 */
+
+/* Auto layout */
+margin-top: 15%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 17px 39px;
+gap: 10px;
+
+width: 1440px;
+height: 80px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
 h1{
     /* Home page */
 
