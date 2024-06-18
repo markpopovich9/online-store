@@ -56,6 +56,8 @@ form{
     margin-right: auto;
 }
 p{
+    margin-right: auto;
+    margin-left: 25px;
     margin-top: auto;
     margin-bottom: auto;
     left: 40px;
@@ -65,7 +67,11 @@ p{
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
+    /* Login */
+
+
 }
+
 input{
     /* Input Login */
 

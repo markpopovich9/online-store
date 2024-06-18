@@ -76,6 +76,8 @@ top: 132px; */
 /* Login */
 
 /* position:relative; */
+margin-right: auto;
+margin-left: 25px;
 left: 40px;
 top: 22px;
 margin-top: auto;
@@ -210,6 +212,32 @@ z-index: 5;
 
 
 
+
+}
+h1{
+    /* Confirmed */
+
+/* width: 441px;
+height: 95px; */
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+/* z-index: 0; */
 
 }
 #log{
