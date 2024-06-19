@@ -3,6 +3,7 @@
     src: url(fonts/Inter-Regular.woff2);
 }
 .first{
+<<<<<<< HEAD
     position: absolute;
     top: 1.3%;
     left: 2%; 
@@ -24,6 +25,100 @@ p{
 
 /* width: 238px;
 height: 44px; */
+=======
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+   
+    /* HOME */
+    /* HOME */
+
+
+
+/* width: 177px;
+height: 44px; */
+/* 
+<a class="first" href="/">HOME</a>
+    <a id="shop" href="/shop/">SHOP</a>
+    <a id="basket" href="/shop/">BASKET</a>
+    <a id="contacts" href="/shop/">CONTACTS</a>
+    <p id="end">{{ name }}</p> */
+}
+#shop{
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 10%;
+    text-decoration-line: none;
+    /* SHOP */
+
+
+
+}
+#basket{
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 19%;
+    text-decoration-line:none ;
+}
+#contacts{
+    font-family: 'Inter';
+    position: absolute;
+    top: 4%;
+    left: 30%;
+    text-decoration-line:none ;
+    font-family: 'Inter';
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+
+#end{
+     /* mykola Skrypnyk */
+     position: absolute;
+     /* width: 1400px; */
+     /* height: 33px; */
+     left: 90%;
+     top: 9px;
+
+     color: #000000;
+ 
+ 
+ font-family: 'Inter';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 24px;
+ line-height: 29px;
+ display: flex;
+ text-transform: uppercase;
+ 
+ 
+ 
+ }
+a{
+/* HOME */
+
+width: 177px;
+height: 44px;
+>>>>>>> b07282d09d6117d19b2de2fc16bd5bdf8f4d896f
 
 font-family: 'Inter';
 font-style: normal;
@@ -45,6 +140,7 @@ flex-grow: 0;
 
 
 }
+<<<<<<< HEAD
 #log{
     /* Frame 2 */
 
@@ -67,6 +163,9 @@ order: 0;
 flex-grow: 0;
 
 }
+=======
+
+>>>>>>> b07282d09d6117d19b2de2fc16bd5bdf8f4d896f
 h1{
     /* Home page */
 
@@ -101,44 +200,20 @@ h1{
 
  
 }
-a{
-    
-
-    /* Registration */
-
+.end{
     position: absolute;
+<<<<<<< HEAD
     /* width: 1400px;
     height: 33px; */
+=======
+>>>>>>> b07282d09d6117d19b2de2fc16bd5bdf8f4d896f
     left: 90%;
     top: 9px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    display: flex;
-    align-items: center;
-    text-align: right;
-    text-decoration-line: underline;
-    text-transform: uppercase;
-
-    color: #000000;
-
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    z-index: 0;
-
-
-
-
-
 }
 #first{
+    position: absolute;
     left: 80%;
+<<<<<<< HEAD
 }
 #end{
     
@@ -185,4 +260,57 @@ a{
     top: 4%;
     left: 30%;
     text-decoration-line:none ;
+=======
+    top: 9px;
+}
+.message{
+    /* Ellipse 1 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 35px;
+height: 35px;
+left: 504.5px;
+top: 13px;
+
+background: #EFCB4A;
+border: 1px solid #000000;
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+z-index: 4;
+
+
+/* 1 */
+border-radius: 15px;
+position: absolute;
+width: 28px;
+height: 27px;
+left: 430px;
+top: 50px;
+color: #000000;
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+/* display: none; */
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+font-family: 'Inter';
+
+}
+#message{
+    /* text-align: center; */
+
+margin-left: 7px;
+/* margin-bottom: 80px; */
+
+
+
+>>>>>>> b07282d09d6117d19b2de2fc16bd5bdf8f4d896f
 }

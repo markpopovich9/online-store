@@ -8,16 +8,31 @@
     {% if code %}
         <div id="log">
 
+<<<<<<< HEAD
             <p class="first">HOME</p>
             <a id="shop" href="/">SHOP</a>
             <a id="basket" href="/">BASKET</a>
             <a id="contacts" href="/">CONTACTS</a>
             <p id="end">{{ code }}</p>
+=======
+            <a class="first">HOME</a>
+            <a id="shop" href="/shop/">SHOP</a>
+            <a id="basket" href="/basket/">CART</a>
+            <a id="contacts" href="/contacts/">CONTACTS</a>
+            <p id="end">{{ code }}</p>
+            {% if count != "0"%}
+                <div class="message"><p id="message">{{count}}</p></div>
+            {% endif %}
+>>>>>>> b07282d09d6117d19b2de2fc16bd5bdf8f4d896f
         </div>
     {% else %}
         <div>
             <a href="/reg/" id="first">Registration </a>
+<<<<<<< HEAD
             <a href="/login/">Autorization</a>
+=======
+            <a href="/login/" class="end">Autorization</a>
+>>>>>>> b07282d09d6117d19b2de2fc16bd5bdf8f4d896f
         </div>
     {% endif %}
     <h1>HOME PAGE</h1>

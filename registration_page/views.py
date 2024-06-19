@@ -20,15 +20,20 @@ def render_reg_page():
             user = User(
                 login = flask.request.form['login'],
                 email = flask.request.form['email'],
+<<<<<<< HEAD
                 password = flask.request.form['password']
+=======
+                password = flask.request.form['password'],
+                is_admin = False
+>>>>>>> b07282d09d6117d19b2de2fc16bd5bdf8f4d896f
             )
 
             try:
                 DATABASE.session.add(user)
                 DATABASE.session.commit()
                 code = "--> authorization"
-            except:
-                return "ERROR"
+            except Exception as error:
+                return error
     return flask.render_template(
         template_name_or_list= "reg.html",
         code =  code
