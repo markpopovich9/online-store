@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home page
+{% endblock %}
+
+{% block content %}
+    {% if code %}
+        <div id="log">
+
+            <a class="first">HOME</a>
+            <a id="shop" href="/shop/">SHOP</a>
+            <a id="basket" href="/basket/">CART</a>
+            <a id="contacts" href="/contacts/">CONTACTS</a>
+            <p id="end">{{ code }}</p>
+            {% if count != "0"%}
+                <div class="message"><p id="message">{{count}}</p></div>
+            {% endif %}
+        </div>
+    {% else %}
+        <div>
+            <a href="/reg/" id="first">Registration </a>
+            <a href="/login/" class="end">Autorization</a>
+        </div>
+    {% endif %}
+    <h1>HOME PAGE</h1>
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename = '/css/style.css') }}">
+{% endblock %}
